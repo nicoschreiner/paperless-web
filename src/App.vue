@@ -1,32 +1,53 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+    <v-navigation-drawer v-if="layout === 'app'" v-model="drawer" app>
+      <navigation-list></navigation-list>
+    </v-navigation-drawer>
+
+    <v-app-bar v-if="layout === 'app'" app>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title class="headline">{{ title }}</v-toolbar-title>
     </v-app-bar>
 
-    <v-content>
-      <router-view />
+    <v-content style="background-color: white;">
+      <router-view></router-view>
     </v-content>
+
+    <v-footer v-if="layout === 'app'" app>
+      Version: {{ $store.state.version }}
+    </v-footer>
   </v-app>
 </template>
 
 <script>
+import _ from 'lodash'
+import NavigationList from '@/components/NavigationList'
+
 export default {
   name: 'App',
-  data: () => ({
-    //
-  })
+
+  components: {
+    NavigationList
+  },
+
+  data() {
+    return {
+      drawer: true
+    }
+  },
+
+  computed: {
+    layout() {
+      if (this.$route) {
+        return this.$route.meta.layout
+      } else {
+        return ''
+      }
+    },
+
+    title() {
+      return _.get(this.$route, 'meta.title', 'Paperless Web')
+    }
+  }
 }
 </script>
