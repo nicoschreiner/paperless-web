@@ -51,14 +51,19 @@ const router = new Router({
         import(/* webpackChunkName: "logs" */ './views/Logs.vue'),
       meta: {
         auth: true,
-        layout: 'app'
+        layout: 'app',
+        title: 'Logs'
       }
     },
     {
       path: '/tags',
       name: 'tags',
-      component: () =>
-        import(/* webpackChunkName: "tags" */ './views/Tags.vue'),
+      components: {
+        default: () =>
+          import(/* webpackChunkName: "tags" */ './views/Tags.vue'),
+        appBar: () =>
+          import(/* webpackChunkName: "tags" */ './views/TagsAppBar.vue')
+      },
       meta: {
         auth: true,
         layout: 'app'

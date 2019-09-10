@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-item>
+    <v-list-item @click="toggleProfile">
       <v-list-item-content>
         <v-list-item-title class="title">
           Paperless Web
@@ -9,7 +9,27 @@
           {{ $store.state.auth.username }}
         </v-list-item-subtitle>
       </v-list-item-content>
+      <v-list-item-action>
+        <v-icon :class="{ rotate180: showProfile }">
+          mdi-menu-down
+        </v-icon>
+      </v-list-item-action>
     </v-list-item>
+
+    <v-expand-transition>
+      <v-list v-if="showProfile" dense nav>
+        <!-- Logout -->
+        <v-list-item @click="logout">
+          <v-list-item-icon>
+            <v-icon>mdi-logout</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Logout</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-expand-transition>
 
     <v-divider></v-divider>
 
@@ -25,8 +45,10 @@
         </v-list-item-content>
       </v-list-item>
 
+      <v-subheader>Documents</v-subheader>
+
       <!-- Correspondents -->
-      <v-list-item :to="{ name: 'correspondents' }">
+      <v-list-item :to="{ name: 'correspondents' }" disabled>
         <v-list-item-icon>
           <v-icon>mdi-account-group</v-icon>
         </v-list-item-icon>
@@ -34,10 +56,12 @@
         <v-list-item-content>
           <v-list-item-title>Correspondents</v-list-item-title>
         </v-list-item-content>
+
+        <v-chip x-small color="info">soon</v-chip>
       </v-list-item>
 
       <!-- Documents -->
-      <v-list-item :to="{ name: 'documents' }">
+      <v-list-item :to="{ name: 'documents' }" disabled>
         <v-list-item-icon>
           <v-icon>mdi-file-multiple</v-icon>
         </v-list-item-icon>
@@ -45,17 +69,8 @@
         <v-list-item-content>
           <v-list-item-title>Documents</v-list-item-title>
         </v-list-item-content>
-      </v-list-item>
 
-      <!-- Logs -->
-      <v-list-item :to="{ name: 'logs' }">
-        <v-list-item-icon>
-          <v-icon>mdi-file-document-box</v-icon>
-        </v-list-item-icon>
-
-        <v-list-item-content>
-          <v-list-item-title>Logs</v-list-item-title>
-        </v-list-item-content>
+        <v-chip x-small color="info">soon</v-chip>
       </v-list-item>
 
       <!-- Tags -->
@@ -70,13 +85,28 @@
       </v-list-item>
 
       <!-- Reminders -->
-      <v-list-item :to="{ name: 'reminders' }">
+      <v-list-item :to="{ name: 'reminders' }" disabled>
         <v-list-item-icon>
           <v-icon>mdi-bell</v-icon>
         </v-list-item-icon>
 
         <v-list-item-content>
           <v-list-item-title>Reminders</v-list-item-title>
+        </v-list-item-content>
+
+        <v-chip x-small color="info">soon</v-chip>
+      </v-list-item>
+
+      <v-subheader>Admin</v-subheader>
+
+      <!-- Logs -->
+      <v-list-item :to="{ name: 'logs' }">
+        <v-list-item-icon>
+          <v-icon>mdi-file-document-box</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content>
+          <v-list-item-title>Logs</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -87,29 +117,15 @@
 export default {
   data() {
     return {
-      username: null,
-      password: null
+      showProfile: false
     }
   },
 
   methods: {
-    async submit() {
-      const valid = await this.$refs.observer.validate()
+    logout() {},
 
-      if (valid) {
-        this.$store
-          .dispatch('auth/login', {
-            username: this.username,
-            password: this.password
-          })
-          .then(() => {
-            this.$emit('login:success')
-          })
-          .catch(() => {
-            this.$refs.vpPassword.setErrors(['Invalid Password'])
-            this.$emit('login:fail')
-          })
-      }
+    toggleProfile() {
+      this.showProfile = !this.showProfile
     }
   }
 }

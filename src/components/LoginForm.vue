@@ -72,7 +72,8 @@ export default {
           .then(() => {
             this.$emit('login:success')
           })
-          .catch(() => {
+          .catch(err => {
+            this.$log.error(err)
             this.$refs.vpPassword.setErrors(['Invalid Password'])
             this.$emit('login:fail')
           })

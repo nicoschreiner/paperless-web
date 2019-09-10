@@ -1,3 +1,4 @@
+import * as log from 'loglevel'
 import axios from 'axios'
 
 const prefix = process.env.VUE_APP_API_URL
@@ -17,6 +18,7 @@ export default {
           resolve(res)
         })
         .catch(err => {
+          log.error(err)
           reject(err)
         })
     })

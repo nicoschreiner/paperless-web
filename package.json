@@ -10,7 +10,9 @@
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "core-js": "^2.6.5",
+    "loglevel": "^1.6.4",
     "roboto-fontface": "*",
+    "sweetalert2": "^8.17.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuetify": "^2.0.0",
