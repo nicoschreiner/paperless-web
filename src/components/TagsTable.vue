@@ -11,16 +11,30 @@
       <v-icon v-if="item.matchInsensitive" color="success">
         mdi-check-circle
       </v-icon>
-      <v-icon v-else color="error">> mdi-minus-circle </v-icon>
+      <v-icon v-else color="error">mdi-minus-circle </v-icon>
     </template>
 
     <template v-slot:item.action="{ item }">
-      <v-icon class="mr-2" @click="$emit('edit', item.id)">
-        mdi-pencil
-      </v-icon>
-      <v-icon @click="$emit('delete', item.id)">
-        mdi-delete
-      </v-icon>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn icon v-on="on">
+            <v-icon @click="$emit('edit', item.id)">
+              mdi-pencil
+            </v-icon>
+          </v-btn>
+        </template>
+        {{ $t('misc.edit') }}
+      </v-tooltip>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn icon v-on="on">
+            <v-icon @click="$emit('delete', item.id)">
+              mdi-delete
+            </v-icon>
+          </v-btn>
+        </template>
+        {{ $t('misc.delete') }}
+      </v-tooltip>
     </template>
   </v-data-table>
 </template>
@@ -35,41 +49,41 @@ export default {
     return {
       headers: [
         {
-          text: 'Name',
+          text: this.$t('tags.headers.name'),
           align: 'left',
           sortable: true,
           value: 'name'
         },
         {
-          text: 'Color',
+          text: this.$t('tags.headers.color'),
           align: 'center',
           sortable: false,
           value: 'color'
         },
         {
-          text: 'Match',
+          text: this.$t('tags.headers.match'),
           align: 'left',
           sortable: true,
           value: 'match'
         },
         {
-          text: 'Match Algorithm',
+          text: this.$t('tags.headers.match-algorithm'),
           align: 'left',
           sortable: true,
           value: 'matchAlgo'
         },
         {
-          text: 'Case Insensitive',
+          text: this.$t('tags.headers.match-insensitive'),
           align: 'center',
           sortable: true,
           value: 'matchInsensitive'
         },
         {
-          text: 'Actions',
+          text: this.$t('misc.actions'),
           align: 'center',
           sortable: false,
           value: 'action',
-          width: '100px'
+          width: '125px'
         }
       ]
     }

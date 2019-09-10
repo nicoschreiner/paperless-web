@@ -1,0 +1,66 @@
+{
+  "title": "Paperless Web",
+  "misc": {
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "soon": "soon",
+    "actions": "Actions",
+    "logout": "Logout"
+  },
+  "login": {
+    "title": "Login",
+    "fields": {
+      "password": "Password",
+      "username": "Username"
+    },
+    "actions": {
+      "submit": "Login"
+    },
+    "messages": {
+      "login-failed": "Invalid Password"
+    }
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "correspondents": "Correspondents",
+    "documents": "Documents",
+    "tags": "Tags",
+    "reminders": "Reminders",
+    "logs": "Logs",
+    "subheader": {
+      "admin": "Admin",
+      "documents": "Documents"
+    }
+  },
+  "tags": {
+    "title": "Tags",
+    "title-add": "Add Tag",
+    "title-edit": "Edit Tag",
+    "fields": {
+      "name": "Name",
+      "color": "Color",
+      "match": "Match",
+      "match-algorithm": "Match Algorithm",
+      "match-insensitive": "Match case insensitive",
+      "match-algorithm-hint": "Which algorithm you want to use when matching text to the OCR'd PDF?"
+    },
+    "actions": {
+      "update": "Update",
+      "create": "Create"
+    },
+    "headers": {
+      "name": "Name",
+      "color": "Color",
+      "match": "Match",
+      "match-algorithm": "Match Algorithm",
+      "match-insensitive": "Match case insensitive"
+    }
+  },
+  "logs": {
+    "headers": {
+      "created": "Created",
+      "message": "Message"
+    }
+  }
+}

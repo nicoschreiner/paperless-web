@@ -3,7 +3,7 @@
     <v-form @submit.prevent="submit">
       <ValidationObserver ref="observer" v-slot="{ invalid }">
         <v-toolbar color="primary" dark flat>
-          <v-toolbar-title>Login</v-toolbar-title>
+          <v-toolbar-title>{{ $t('login.title') }}</v-toolbar-title>
           <div class="flex-grow-1"></div>
         </v-toolbar>
 
@@ -11,11 +11,11 @@
           <ValidationProvider
             v-slot="{ errors }"
             rules="required|max:100"
-            name="Username"
+            :name="$t('login.fields.username')"
           >
             <v-text-field
               v-model="username"
-              label="Username"
+              :label="$t('login.fields.username')"
               prepend-icon="mdi-account"
               autocomplete="username"
               :error-messages="errors"
@@ -26,11 +26,11 @@
             ref="vpPassword"
             v-slot="{ errors }"
             rules="required|max:100"
-            name="Password"
+            :name="$t('login.fields.password')"
           >
             <v-text-field
               v-model="password"
-              label="Password"
+              :label="$t('login.fields.password')"
               prepend-icon="mdi-key"
               type="password"
               autocomplete="current-password"
@@ -43,7 +43,9 @@
 
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn type="submit" color="primary" :disabled="invalid">Login</v-btn>
+          <v-btn type="submit" color="primary" :disabled="invalid">{{
+            $t('login.actions.submit')
+          }}</v-btn>
         </v-card-actions>
       </ValidationObserver>
     </v-form>
@@ -74,7 +76,9 @@ export default {
           })
           .catch(err => {
             this.$log.error(err)
-            this.$refs.vpPassword.setErrors(['Invalid Password'])
+            this.$refs.vpPassword.setErrors([
+              this.$t('login.messages.login-failed')
+            ]) // Invalid Password
             this.$emit('login:fail')
           })
       }

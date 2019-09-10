@@ -2,7 +2,7 @@
   <v-dialog v-model="dialog" persistent max-width="600px">
     <tags-form
       :tag="tag"
-      @click:cancel="onCancel"
+      @click:cancel="close"
       @submit:success="close"
     ></tags-form>
   </v-dialog>
@@ -24,6 +24,7 @@ export default {
   },
 
   methods: {
+    // called from parent
     open() {
       this.dialog = true
     },
@@ -33,33 +34,10 @@ export default {
       this.tag = null
     },
 
+    // called from parent
     edit(tagId) {
       this.open()
       this.tag = this.$store.getters['tags/tagById'](tagId)
-    },
-
-    async submit() {
-      const valid = await this.$refs.observer.validate()
-
-      if (valid) {
-        this.$store
-          .dispatch('auth/login', {
-            username: this.username,
-            password: this.password
-          })
-          .then(() => {
-            this.$emit('login:success')
-          })
-          .catch(err => {
-            this.$log.error(err)
-            this.$refs.vpPassword.setErrors(['Invalid Password'])
-            this.$emit('login:fail')
-          })
-      }
-    },
-
-    onCancel() {
-      this.close()
     }
   }
 }

@@ -1,0 +1,66 @@
+{
+  "title": "Paperless Web",
+  "misc": {
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "soon": "bald",
+    "actions": "Aktionen",
+    "logout": "Ausloggen"
+  },
+  "login": {
+    "title": "Login",
+    "fields": {
+      "password": "Passwort",
+      "username": "Benutzername"
+    },
+    "actions": {
+      "submit": "Login"
+    },
+    "messages": {
+      "login-failed": "Passwort ungültig"
+    }
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "correspondents": "Correspondents",
+    "documents": "Dokumente",
+    "tags": "Tags",
+    "reminders": "Erinnerungen",
+    "logs": "Logs",
+    "subheader": {
+      "admin": "Admin",
+      "documents": "Dokumente"
+    }
+  },
+  "tags": {
+    "title": "Tags",
+    "title-add": "Tag hinzufügen",
+    "title-edit": "Tag bearbeiten",
+    "fields": {
+      "name": "Name",
+      "color": "Farbe",
+      "match": "Match",
+      "match-algorithm": "Match Algorithmus",
+      "match-insensitive": "Groß- und Kleinschreibung ignorieren",
+      "match-algorithm-hint": "Welchen Algorithmus willst du zum Erkennen des PDF-Textes nutzen?"
+    },
+    "actions": {
+      "update": "Aktualisieren",
+      "create": "Erstellen"
+    },
+    "headers": {
+      "name": "Name",
+      "color": "Farbe",
+      "match": "Match",
+      "match-algorithm": "Match Algorithmus",
+      "match-insensitive": "Groß- und Kleinschreibung ignorieren"
+    }
+  },
+  "logs": {
+    "headers": {
+      "created": "Zeit",
+      "message": "Nachricht"
+    }
+  }
+}

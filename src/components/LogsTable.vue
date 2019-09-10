@@ -32,13 +32,13 @@ export default {
       loading: false,
       headers: [
         {
-          text: 'Created',
+          text: this.$t('logs.headers.created'),
           align: 'left',
           sortable: false,
           value: 'time'
         },
         {
-          text: 'Message',
+          text: this.$t('logs.headers.message'),
           align: 'left',
           sortable: false,
           value: 'messages'

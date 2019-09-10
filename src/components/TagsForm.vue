@@ -13,11 +13,11 @@
           <ValidationProvider
             v-slot="{ errors }"
             rules="required|max:100"
-            name="Name"
+            :name="$t('tags.fields.name')"
           >
             <v-text-field
               v-model="name"
-              label="Name"
+              :label="$t('tags.fields.name')"
               prepend-icon="mdi-pencil"
               :error-messages="errors"
             >
@@ -25,10 +25,14 @@
           </ValidationProvider>
 
           <!-- Color -->
-          <ValidationProvider v-slot="{ errors }" rules="required" name="Color">
+          <ValidationProvider
+            v-slot="{ errors }"
+            rules="required"
+            :name="$t('tags.fields.color')"
+          >
             <v-select
               v-model="color"
-              label="Color"
+              :label="$t('tags.fields.color')"
               :items="colors"
               :error-messages="errors"
             >
@@ -52,10 +56,14 @@
           </ValidationProvider>
 
           <!-- Match -->
-          <ValidationProvider v-slot="{ errors }" rules="max:256" name="Match">
+          <ValidationProvider
+            v-slot="{ errors }"
+            rules="max:256"
+            :name="$t('tags.fields.match')"
+          >
             <v-text-field
               v-model="match"
-              label="Match"
+              :label="$t('tags.fields.match')"
               prepend-icon="mdi-filter"
               :error-messages="errors"
             ></v-text-field>
@@ -65,12 +73,12 @@
           <ValidationProvider
             v-slot="{ errors }"
             rules="required"
-            name="Match Algorithm"
+            :name="$t('tags.fields.match-algorithm')"
           >
             <v-select
               v-model="matchAlgo"
-              label="Match Algorithm"
-              hint="Which algorithm you want to use when matching text to the OCR'd PDF?"
+              :label="$t('tags.fields.match-algorithm')"
+              :hint="$t('tags.fields.match-algorithm-hint')"
               persistent-hint
               prepend-icon="mdi-filter"
               :items="matchAlgoItems"
@@ -89,7 +97,10 @@
 
           <!-- Case Insensitive -->
           <span>
-            <v-checkbox v-model="matchInsensitive" label="Case Insensitive">
+            <v-checkbox
+              v-model="matchInsensitive"
+              :label="$t('tags.fields.match-insensitive')"
+            >
             </v-checkbox>
           </span>
         </v-card-text>
@@ -99,7 +110,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" text @click="cancel">
-            Cancel
+            {{ $t('misc.cancel') }}
           </v-btn>
           <v-btn
             type="submit"
@@ -176,11 +187,13 @@ export default {
     ...mapState('tags', ['colors']),
 
     title() {
-      return 'Add Tag'
+      return this.tag ? this.$t('tags.title-add') : this.$t('tags.title-edit')
     },
 
     submitText() {
-      return this.tag ? 'Update' : 'Create'
+      return this.tag
+        ? this.$t('tags.actions.update')
+        : this.$t('tags.actions.create')
     },
 
     colorHex() {

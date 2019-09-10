@@ -3,11 +3,9 @@
     <v-list-item @click="toggleProfile">
       <v-list-item-content>
         <v-list-item-title class="title">
-          Paperless Web
+          {{ $t('title') }}
         </v-list-item-title>
-        <v-list-item-subtitle>
-          {{ $store.state.auth.username }}
-        </v-list-item-subtitle>
+        <v-list-item-subtitle> </v-list-item-subtitle>
       </v-list-item-content>
       <v-list-item-action>
         <v-icon :class="{ rotate180: showProfile }">
@@ -25,7 +23,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>Logout</v-list-item-title>
+            <v-list-item-title>{{ $t('misc.logout') }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -41,11 +39,13 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Dashboard</v-list-item-title>
+          <v-list-item-title>{{
+            $t('navigation.dashboard')
+          }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
-      <v-subheader>Documents</v-subheader>
+      <v-subheader>{{ $t('navigation.subheader.documents') }}</v-subheader>
 
       <!-- Correspondents -->
       <v-list-item :to="{ name: 'correspondents' }" disabled>
@@ -54,10 +54,12 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Correspondents</v-list-item-title>
+          <v-list-item-title>{{
+            $t('navigation.correspondents')
+          }}</v-list-item-title>
         </v-list-item-content>
 
-        <v-chip x-small color="info">soon</v-chip>
+        <v-chip x-small color="info">{{ $t('misc.soon') }}</v-chip>
       </v-list-item>
 
       <!-- Documents -->
@@ -67,10 +69,12 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Documents</v-list-item-title>
+          <v-list-item-title>{{
+            $t('navigation.documents')
+          }}</v-list-item-title>
         </v-list-item-content>
 
-        <v-chip x-small color="info">soon</v-chip>
+        <v-chip x-small color="info">{{ $t('misc.soon') }}</v-chip>
       </v-list-item>
 
       <!-- Tags -->
@@ -80,7 +84,7 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Tags</v-list-item-title>
+          <v-list-item-title>{{ $t('navigation.tags') }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -91,13 +95,15 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Reminders</v-list-item-title>
+          <v-list-item-title>{{
+            $t('navigation.reminders')
+          }}</v-list-item-title>
         </v-list-item-content>
 
-        <v-chip x-small color="info">soon</v-chip>
+        <v-chip x-small color="info">{{ $t('misc.soon') }}</v-chip>
       </v-list-item>
 
-      <v-subheader>Admin</v-subheader>
+      <v-subheader>{{ $t('navigation.subheader.admin') }}</v-subheader>
 
       <!-- Logs -->
       <v-list-item :to="{ name: 'logs' }">
@@ -106,7 +112,7 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Logs</v-list-item-title>
+          <v-list-item-title>{{ $t('navigation.logs') }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>

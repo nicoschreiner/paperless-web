@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app>
     <v-app-bar-nav-icon @click="$emit('click:nav')"></v-app-bar-nav-icon>
-    <v-toolbar-title class="headline">Tags</v-toolbar-title>
+    <v-toolbar-title class="headline">{{ $t('tags.title') }}</v-toolbar-title>
 
     <v-spacer></v-spacer>
 
