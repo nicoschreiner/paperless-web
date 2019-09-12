@@ -79,6 +79,28 @@
       "match-insensitive": "Match case insensitive"
     }
   },
+  "correspondents": {
+    "title": "Correspondents",
+    "title-add": "Add Correspondent",
+    "title-edit": "Edit Correspondent",
+    "fields": {
+      "name": "Name",
+      "match": "Match",
+      "match-algorithm": "Match Algorithm",
+      "match-insensitive": "Match case insensitive",
+      "match-algorithm-hint": "Which algorithm you want to use when matching text to the OCR'd PDF?"
+    },
+    "actions": {
+      "update": "Update",
+      "create": "Create"
+    },
+    "headers": {
+      "name": "Name",
+      "match": "Match",
+      "match-algorithm": "Match Algorithm",
+      "match-insensitive": "Match case insensitive"
+    }
+  },
   "logs": {
     "headers": {
       "created": "Created",

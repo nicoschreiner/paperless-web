@@ -48,7 +48,7 @@
       <v-subheader>{{ $t('navigation.subheader.documents') }}</v-subheader>
 
       <!-- Correspondents -->
-      <v-list-item :to="{ name: 'correspondents' }" disabled>
+      <v-list-item :to="{ name: 'correspondents' }">
         <v-list-item-icon>
           <v-icon>mdi-account-group</v-icon>
         </v-list-item-icon>
@@ -58,8 +58,6 @@
             $t('navigation.correspondents')
           }}</v-list-item-title>
         </v-list-item-content>
-
-        <v-chip x-small color="info">{{ $t('misc.soon') }}</v-chip>
       </v-list-item>
 
       <!-- Documents -->

@@ -25,10 +25,16 @@ const router = new Router({
     {
       path: '/correspondents',
       name: 'correspondents',
-      component: () =>
-        import(
-          /* webpackChunkName: "correspondents" */ './views/Correspondents.vue'
-        ),
+      components: {
+        default: () =>
+          import(
+            /* webpackChunkName: "correspondents" */ './views/Correspondents.vue'
+          ),
+        appBar: () =>
+          import(
+            /* webpackChunkName: "correspondents" */ './views/CorrespondentsAppBar.vue'
+          )
+      },
       meta: {
         auth: true,
         layout: 'app'

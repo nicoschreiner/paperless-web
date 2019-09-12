@@ -23,7 +23,7 @@
   },
   "navigation": {
     "dashboard": "Dashboard",
-    "correspondents": "Correspondents",
+    "correspondents": "Kontakte",
     "documents": "Dokumente",
     "tags": "Tags",
     "reminders": "Erinnerungen",
@@ -35,7 +35,7 @@
   },
   "dashboard": {
     "correspondents": {
-      "title": "Correspondents",
+      "title": "Kontakte",
       "subtitle": ""
     },
     "documents": {
@@ -74,6 +74,28 @@
     "headers": {
       "name": "Name",
       "color": "Farbe",
+      "match": "Match",
+      "match-algorithm": "Match Algorithmus",
+      "match-insensitive": "Groß- und Kleinschreibung ignorieren"
+    }
+  },
+  "correspondents": {
+    "title": "Kontakte",
+    "title-add": "Kontakt hinzufügen",
+    "title-edit": "Kontakt bearbeiten",
+    "fields": {
+      "name": "Name",
+      "match": "Match",
+      "match-algorithm": "Match Algorithmus",
+      "match-insensitive": "Groß- und Kleinschreibung ignorieren",
+      "match-algorithm-hint": "Welchen Algorithmus willst du zum Erkennen des PDF-Textes nutzen?"
+    },
+    "actions": {
+      "update": "Aktualisieren",
+      "create": "Erstellen"
+    },
+    "headers": {
+      "name": "Name",
       "match": "Match",
       "match-algorithm": "Match Algorithmus",
       "match-insensitive": "Groß- und Kleinschreibung ignorieren"
