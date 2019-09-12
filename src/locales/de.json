@@ -33,6 +33,28 @@
       "documents": "Dokumente"
     }
   },
+  "dashboard": {
+    "correspondents": {
+      "title": "Correspondents",
+      "subtitle": ""
+    },
+    "documents": {
+      "title": "Dokumente",
+      "subtitle": ""
+    },
+    "tags": {
+      "title": "Tags",
+      "subtitle": ""
+    },
+    "reminders": {
+      "title": "Erinnerungen",
+      "subtitle": ""
+    },
+    "logs": {
+      "title": "Logs",
+      "subtitle": ""
+    }
+  },
   "tags": {
     "title": "Tags",
     "title-add": "Tag hinzufügen",

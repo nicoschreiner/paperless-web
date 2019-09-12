@@ -33,6 +33,28 @@
       "documents": "Documents"
     }
   },
+  "dashboard": {
+    "correspondents": {
+      "title": "Correspondents",
+      "subtitle": ""
+    },
+    "documents": {
+      "title": "Documents",
+      "subtitle": ""
+    },
+    "tags": {
+      "title": "Tags",
+      "subtitle": ""
+    },
+    "reminders": {
+      "title": "Reminders",
+      "subtitle": ""
+    },
+    "logs": {
+      "title": "Logs",
+      "subtitle": ""
+    }
+  },
   "tags": {
     "title": "Tags",
     "title-add": "Add Tag",
