@@ -15,10 +15,12 @@ extend('max', max)
 
 // Localize
 localize({
-  en: en,
-  'de-DE': de
+  en,
+  de
 })
-localize(navigator.language)
+if (navigator.language) {
+  localize(navigator.language.substring(0, 2))
+}
 
 // Register it globally
 Vue.component('ValidationProvider', ValidationProvider)
