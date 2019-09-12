@@ -152,8 +152,8 @@ export default {
   computed: {
     title() {
       return this.correspondent
-        ? this.$t('correspondents.title-add')
-        : this.$t('correspondents.title-edit')
+        ? this.$t('correspondents.title-edit')
+        : this.$t('correspondents.title-add')
     },
 
     submitText() {

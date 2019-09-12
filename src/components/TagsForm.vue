@@ -187,7 +187,7 @@ export default {
     ...mapState('tags', ['colors']),
 
     title() {
-      return this.tag ? this.$t('tags.title-add') : this.$t('tags.title-edit')
+      return this.tag ? this.$t('tags.title-edit') : this.$t('tags.title-add')
     },
 
     submitText() {
