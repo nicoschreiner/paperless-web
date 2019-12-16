@@ -61,9 +61,9 @@
       </v-list-item>
 
       <!-- Documents -->
-      <v-list-item :to="{ name: 'documents' }" disabled>
+      <v-list-item :to="{ name: 'documents' }">
         <v-list-item-icon>
-          <v-icon>mdi-file-multiple</v-icon>
+          <v-icon>mdi-file-document-box</v-icon>
         </v-list-item-icon>
 
         <v-list-item-content>
@@ -71,8 +71,6 @@
             $t('navigation.documents')
           }}</v-list-item-title>
         </v-list-item-content>
-
-        <v-chip x-small color="info">{{ $t('misc.soon') }}</v-chip>
       </v-list-item>
 
       <!-- Tags -->

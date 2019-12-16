@@ -36,7 +36,7 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'CorrespondentTable',
+  name: 'CorrespondentsTable',
 
   data() {
     return {

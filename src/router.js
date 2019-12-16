@@ -43,8 +43,14 @@ const router = new Router({
     {
       path: '/documents',
       name: 'documents',
-      component: () =>
-        import(/* webpackChunkName: "documents" */ './views/Documents.vue'),
+      components: {
+        default: () =>
+          import(/* webpackChunkName: "documents" */ './views/Documents.vue'),
+        appBar: () =>
+          import(
+            /* webpackChunkName: "documents" */ './views/DocumentsAppBar.vue'
+          )
+      },
       meta: {
         auth: true,
         layout: 'app'

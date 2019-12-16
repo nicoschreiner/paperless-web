@@ -2,6 +2,7 @@
   <dashboard-card-base
     :title="$t('dashboard.documents.title')"
     :subtitle="$t('dashboard.documents.subtitle')"
+    :to="{ name: 'documents' }"
   >
     <v-container>
       <v-row align="center" justify="center">
